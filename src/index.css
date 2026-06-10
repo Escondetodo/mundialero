@@ -1,0 +1,18 @@
+@import "tailwindcss";
+
+@theme {
+  --color-mine-shaft: #2b2b2b;
+  --color-mine-shaft-light: #555555;
+  --color-sushi: #88c341;
+  --color-sushi-10: rgba(136, 195, 65, 0.1);
+  --color-oslo-gray: #8b8d91;
+}
+
+body {
+  margin: 0;
+  font-family: system-ui, -apple-system, sans-serif;
+}
+
+.brand-gradient {
+  background: linear-gradient(135deg, #5e00ed 0%, #a9000e 50%, #08A845 100%);
+}
