@@ -2,8 +2,6 @@
 
 Seguí el Mundial 2026 con fixture completo, canales de TV para Argentina, filtros por país/día/canal, y favoritos persistidos.
 
-Construida como proyecto de portfolio — código limpio, tipado fuerte, sin dependencias innecesarias.
-
 ## Stack
 
 - **React 19** — con TypeScript estricto
