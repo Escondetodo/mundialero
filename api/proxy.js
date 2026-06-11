@@ -1,6 +1,5 @@
 export default async function handler(request, response) {
   const apiPath = request.query.path;
-
   if (!apiPath) return response.status(400).json({ error: "Missing path" });
 
   try {
