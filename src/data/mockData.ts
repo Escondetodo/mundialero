@@ -13,6 +13,9 @@ export interface Match {
   channelIds: string[];
   stadium: string;
   group: string;
+  homeScore?: number;
+  awayScore?: number;
+  status?: "scheduled" | "live" | "finished";
 }
 
 export interface GroupStanding {
