@@ -1281,3 +1281,10 @@ export const groupStandings: GroupStanding[] = [
   { group: "L", teamId: "PAN", played: 0, won: 0, drawn: 0, lost: 0, gf: 0, ga: 0, pts: 0, gd: 0 },
 ];
 
+export function buildMatchChannelMap(): Record<number, string[]> {
+  const map: Record<number, string[]> = {};
+  for (const match of matches) {
+    map[match.id] = match.channelIds;
+  }
+  return map;
+}

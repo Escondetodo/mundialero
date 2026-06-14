@@ -8,6 +8,8 @@ interface AppState{
   selectedDay: string;
   favoriteMatch: number [];
   selectedGroup: string; 
+  apiVersion: number;
+  bumpApiVersion: () => void;
   setSelectedCountry: (country: string) => void;
   toggleChannel: (channel: string) => void;
   setSelectedDay: (day: string) => void;
@@ -20,9 +22,12 @@ interface AppState{
 export const useAppStore = create<AppState>()(persist((set) => ({
   selectedCountry: "",
   selectedChannel: [],
-  selectedDay: "06/11/2026",
+  selectedDay: "",
   selectedGroup:"A",
   favoriteMatch: [],
+  apiVersion:0,
+  
+  bumpApiVersion: () => set((state) => ({ apiVersion: state.apiVersion + 1 })),
 
   setSelectedCountry: (country: string) => {
     set({ selectedCountry: country });

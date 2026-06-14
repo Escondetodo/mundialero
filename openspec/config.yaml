@@ -1,0 +1,50 @@
+# openspec/config.yaml
+schema: spec-driven
+
+context: |
+  Mundialero — World Cup 2026 fixture tracker.
+  React 19 + TypeScript 5.7 (strict) + Vite 6.3 + Tailwind CSS 4.1.
+  State: Zustand 5 with localStorage persistence.
+  Routing: React Router 7.5.
+  UI: Radix primitives (Popover, Select).
+  Hosting: Vercel.
+
+  Architecture: feature-based pages + component features/layout split,
+  Zustand store, data service abstraction layer.
+  No test runner configured yet.
+
+rules:
+  proposal:
+    - Include rollback plan for risky changes
+  specs:
+    - Use Given/When/Then for scenarios
+    - Use RFC 2119 keywords (MUST, SHALL, SHOULD, MAY)
+  design:
+    - Include sequence diagrams for complex flows
+    - Document architecture decisions with rationale
+  tasks:
+    - Group by phase, use hierarchical numbering
+    - Keep tasks completable in one session
+  apply:
+    - Follow existing code patterns
+    tdd: false
+    test_command: ""
+  verify:
+    test_command: ""
+    build_command: "pnpm build"
+    coverage_threshold: 0
+  archive:
+    - Warn before merging destructive deltas
+
+testing:
+  strict_tdd: false
+  runner: null
+  layers:
+    unit: false
+    integration: false
+    e2e: false
+  coverage: false
+  tools:
+    linter: null
+    type_checker: "tsc"
+    formatter: null

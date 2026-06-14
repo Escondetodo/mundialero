@@ -39,8 +39,18 @@ export default function MatchCard({
         </div>
       </div>
 
-      {/* Time */}
-      <div className="mb-3 text-sm font-semibold text-zinc-600">{match.time}</div>
+      {/* Hora + status */}
+      <div className="mb-3 mt-2 flex items-center justify-between text-xs font-semibold">
+        <span className="text-zinc-600">{match.time}</span>
+        {match.status === "finished" && (
+          <span className="text-zinc-900">Final</span>
+        )}
+        {match.status === "live" && (
+          <span className="rounded-full bg-emerald-400 px-2 py-0.5 text-zinc-800">
+            En vivo
+          </span>
+        )}
+      </div>
 
       {/* Teams */}
       <div className="flex items-center justify-between gap-2">
@@ -56,9 +66,12 @@ export default function MatchCard({
           </span>
         </div>
 
-        {/* VS */}
-        <span className="text-sm font-bold uppercase text-black">vs</span>
-
+        {/* Score o VS */}
+        <span className="rounded-md bg-[#08A845] px-3 py-1 text-lg font-bold text-white">
+          {match.homeScore != undefined
+            ? `${match.homeScore} - ${match.awayScore}`
+            : "VS"}
+        </span>
         {/* Away */}
         <div className="flex flex-1 items-center justify-end gap-2">
           <span className="truncate text-base font-bold text-zinc-800">
@@ -74,7 +87,9 @@ export default function MatchCard({
 
       {/* Bottom row: stadium + favorite */}
       <div className="mt-3 flex items-center justify-between">
-        <span className="text-sm font-semibold text-zinc-600">Estadio {match.stadium}</span>
+        <span className="text-sm font-semibold text-zinc-600">
+          Estadio {match.stadium}
+        </span>
         <button
           onClick={() => onFavorite(match.id)}
           className="text-base transition-colors hover:text-yellow-500"

@@ -76,25 +76,25 @@ export default function FilterBar({
               sideOffset={4}
               className="z-50 max-h-28 overflow-y-auto rounded-lg bg-white p-1 shadow-lg w-[var(--radix-popover-trigger-width)]"
             >
-            <button
-              onClick={() => onSelectDay(null)}
-              className="w-full rounded-md px-2 py-0.5 text-left text-xs text-zinc-500 hover:bg-sushi-10"
-            >
-              Todos los dias
-            </button>
-            {days.map((day) => (
               <button
-                key={day}
-                onClick={() => onSelectDay(day)}
-                className={`w-full rounded-md px-2 py-0.5 text-left text-xs ${
-                  selectedDay === day
-                    ? "bg-sushi text-mine-shaft font-medium"
-                    : "text-zinc-700 hover:bg-sushi-10"
-                }`}
+                onClick={() => onSelectDay(null)}
+                className="w-full rounded-md px-2 py-0.5 text-left text-xs text-zinc-500 hover:bg-sushi-10"
               >
-                {day}
+                Todos los dias
               </button>
-            ))}
+              {days.map((day) => (
+                <button
+                  key={day}
+                  onClick={() => onSelectDay(day)}
+                  className={`w-full rounded-md px-2 py-0.5 text-left text-xs ${
+                    selectedDay === day
+                      ? "bg-sushi text-mine-shaft font-medium"
+                      : "text-zinc-700 hover:bg-sushi-10"
+                  }`}
+                >
+                  {day}
+                </button>
+              ))}
             </Popover.Content>
           </Popover.Portal>
         </Popover.Root>
