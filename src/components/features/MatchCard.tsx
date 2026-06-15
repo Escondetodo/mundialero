@@ -10,6 +10,7 @@ export default function MatchCard({
   isFavorite: boolean;
   onFavorite: (id: number) => void;
 }) {
+  //console.log("getTeamsMap: ", getTeamsMap());
   const homeTeam = getTeamsMap()[match.homeTeam];
   const awayTeam = getTeamsMap()[match.awayTeam];
   const channels = match.channelIds
@@ -88,14 +89,16 @@ export default function MatchCard({
       {/* Bottom row: stadium + favorite */}
       <div className="mt-3 flex items-center justify-between">
         <span className="text-sm font-semibold text-zinc-600">
-          Estadio {match.stadium}
+          {match.stadium}
         </span>
         <button
           onClick={() => onFavorite(match.id)}
-          className="text-base transition-colors hover:text-yellow-500"
-          aria-label={isFavorite ? "Remove from favorites" : "Add to favorites"}
+          className="group relative text-base transition-colors hover:text-yellow-500"
         >
           {isFavorite ? "⭐" : "☆"}
+          <span className="pointer-events-none absolute -top-7 left-1/2 -translate-x-1/2 whitespace-nowrap rounded bg-zinc-800 px-2 py-0.5 text-xs text-white opacity-0 transition-opacity group-hover:opacity-100">
+            Favoritos
+          </span>
         </button>
       </div>
     </div>

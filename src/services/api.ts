@@ -64,7 +64,6 @@ function stadiumUtcOffset(stadium: { country_en: string; region?: string; city_e
   if (stadium.country_en === "Mexico") return -6;               // sin DST
   if (stadium.country_en === "Canada" && stadium.city_en === "Vancouver") return -7;
   if (stadium.country_en === "Canada") return -4;               // Toronto
-  // USA
   if (stadium.region === "Western") return -7;                  // Seattle, LA, SF
   if (stadium.region === "Mountain") return -6;
   if (stadium.region === "Central") return -5;                  // Houston, Dallas, KC
