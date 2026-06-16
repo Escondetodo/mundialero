@@ -3,7 +3,7 @@ import { NavLink } from "react-router";
 const tabs = [
   { to: "/matches", label: "Partidos" },
   { to: "/groups", label: "Grupos" },
-  { to: "/news", label: "Noticias" },
+  { to: "/news", label: "Favoritos" },
 ];
 
 export default function BottomNav() {
@@ -16,9 +16,7 @@ export default function BottomNav() {
             to={tab.to}
             className={({ isActive }) =>
               `flex-1 py-3 text-center text-sm font-medium transition-colors ${
-                isActive
-                  ? "text-sushi"
-                  : "text-zinc-400 hover:text-zinc-200"
+                isActive ? "text-sushi" : "text-zinc-400 hover:text-zinc-200"
               }`
             }
           >

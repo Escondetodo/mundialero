@@ -38,6 +38,9 @@ export default function MatchesPage() {
   }, [apiVersion]);
 
   const filteredMatches = getMatches().filter((match) => {
+    //Show only group stage (A-L). Remove this line when real knockout data is available.
+    if (match.group.length !== 1) return false;
+
     if (selectedDay && match.date !== selectedDay) return false;
     if (
       selectedChannel.length > 0 &&
